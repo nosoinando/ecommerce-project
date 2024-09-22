@@ -1,0 +1,43 @@
+
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="!loading">
+  <h2>Modificar Usuario</h2>
+  <form (ngSubmit)="updateUser()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput [(ngModel)]="user.nombre" name="nombre" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input matInput [(ngModel)]="user.apellido" name="apellido" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="user.email" name="email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Teléfono</mat-label>
+      <input matInput [(ngModel)]="user.telefono" name="telefono" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Dirección</mat-label>
+      <input matInput [(ngModel)]="user.direccion" name="direccion" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de Usuario</mat-label>
+      <mat-select [(ngModel)]="user.tipo_usuario" name="tipo_usuario" required>
+        <mat-option value="cliente">Cliente</mat-option>
+        <mat-option value="conductor">Conductor</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Guardar Cambios</button>
+    <br><br>
+    <button mat-raised-button color="primary" (click)="goHome()">Cancelar</button>
+  </form>
+</div>

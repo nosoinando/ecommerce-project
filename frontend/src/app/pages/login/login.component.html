@@ -1,0 +1,32 @@
+<div class="login-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Iniciar Sesión</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <form (ngSubmit)="login()">
+          <mat-form-field appearance="fill">
+            <mat-label>Correo Electrónico</mat-label>
+            <input matInput type="email" [(ngModel)]="email" name="email" required placeholder="Introduce tu correo">
+            <mat-error *ngIf="!email">Correo electrónico requerido</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Teléfono</mat-label>
+            <input matInput type="text" [(ngModel)]="telefono" name="telefono" required placeholder="Introduce tu teléfono">
+            <mat-error *ngIf="!telefono">Teléfono requerido</mat-error>
+          </mat-form-field>
+  
+          <div class="button-container">
+            <button mat-raised-button color="primary" type="submit">Iniciar Sesión</button>
+          </div>
+        </form>
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <p>¿No tienes una cuenta? <a (click)="goToRegister()" style="cursor: pointer;">Regístrate aquí</a></p>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

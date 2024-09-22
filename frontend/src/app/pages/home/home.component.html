@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <span>Transporte App</span>
+    <span class="spacer"></span>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item (click)="goUser()">Modificar Usuario</button>
+      <button mat-menu-item (click)="logout()">Cerrar Sesión</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <div class="content">
+    <h1>Bienvenido a la sección de inicio</h1>
+    <!-- Aquí puedes agregar más contenido -->
+  </div>
+  
