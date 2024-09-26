@@ -1,43 +1,58 @@
+<div class="container mt-5">
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Cargando...</span>
+    </div>
+  </div>
 
-<div *ngIf="loading">Cargando...</div>
-<div *ngIf="!loading">
-  <h2>Modificar Usuario</h2>
-  <form (ngSubmit)="updateUser()">
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput [(ngModel)]="user.nombre" name="nombre" required>
-    </mat-form-field>
+  <div *ngIf="!loading">
+    <h2 class="text-center mb-4">Modificar Usuario</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <mat-card class="shadow">
+          <mat-card-content>
+            <form (ngSubmit)="updateUser()">
+              <mat-form-field appearance="fill" class="w-100 mb-3">
+                <mat-label>Nombre</mat-label>
+                <input matInput [(ngModel)]="user.nombre" name="nombre" required placeholder="Introduce tu nombre">
+              </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Apellido</mat-label>
-      <input matInput [(ngModel)]="user.apellido" name="apellido" required>
-    </mat-form-field>
+              <mat-form-field appearance="fill" class="w-100 mb-3">
+                <mat-label>Apellido</mat-label>
+                <input matInput [(ngModel)]="user.apellido" name="apellido" required placeholder="Introduce tu apellido">
+              </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Email</mat-label>
-      <input matInput type="email" [(ngModel)]="user.email" name="email" required>
-    </mat-form-field>
+              <mat-form-field appearance="fill" class="w-100 mb-3">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" [(ngModel)]="user.email" name="email" required placeholder="Introduce tu correo">
+              </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Teléfono</mat-label>
-      <input matInput [(ngModel)]="user.telefono" name="telefono" required>
-    </mat-form-field>
+              <mat-form-field appearance="fill" class="w-100 mb-3">
+                <mat-label>Teléfono</mat-label>
+                <input matInput [(ngModel)]="user.telefono" name="telefono" required placeholder="Introduce tu teléfono">
+              </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Dirección</mat-label>
-      <input matInput [(ngModel)]="user.direccion" name="direccion" required>
-    </mat-form-field>
+              <mat-form-field appearance="fill" class="w-100 mb-3">
+                <mat-label>Dirección</mat-label>
+                <input matInput [(ngModel)]="user.direccion" name="direccion" required placeholder="Introduce tu dirección">
+              </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Tipo de Usuario</mat-label>
-      <mat-select [(ngModel)]="user.tipo_usuario" name="tipo_usuario" required>
-        <mat-option value="cliente">Cliente</mat-option>
-        <mat-option value="conductor">Conductor</mat-option>
-      </mat-select>
-    </mat-form-field>
+              <mat-form-field appearance="fill" class="w-100 mb-3">
+                <mat-label>Tipo de Usuario</mat-label>
+                <mat-select [(ngModel)]="user.tipo_usuario" name="tipo_usuario" required>
+                  <mat-option value="cliente">Cliente</mat-option>
+                  <mat-option value="conductor">Conductor</mat-option>
+                </mat-select>
+              </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Guardar Cambios</button>
-    <br><br>
-    <button mat-raised-button color="primary" (click)="goHome()">Cancelar</button>
-  </form>
+              <div class="d-grid gap-2">
+                <button mat-raised-button color="primary" type="submit" class="btn btn-primary w-100 mb-2">Guardar Cambios</button>
+                <button mat-raised-button color="secondary" type="button" class="btn btn-outline-secondary w-100" (click)="goHome()">Cancelar</button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>

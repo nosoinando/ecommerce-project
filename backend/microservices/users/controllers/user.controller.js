@@ -25,7 +25,7 @@ exports.login = (req, res) => {
     if (results.length === 0 || results[0].telefono !== telefono) {
       return res.status(400).json({ message: 'Credenciales incorrectas' });
     }
-    res.status(200).json({ message: 'Inicio de sesión exitoso', user: results[0] });
+    res.status(200).json({ message: 'Inicio de sesión exitoso', user: results[0] });  // Devuelve el usuario
   });
 };
 
@@ -60,6 +60,6 @@ exports.getUserById = (req, res) => {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
-    res.json(result); // Devuelve el resultado
+    res.json(result);  // Devuelve el resultado
   });
 };

@@ -1,17 +1,39 @@
-<mat-toolbar color="primary">
-    <span>Transporte App</span>
-    <span class="spacer"></span>
-    <mat-menu #appMenu="matMenu">
-      <button mat-menu-item (click)="goUser()">Modificar Usuario</button>
-      <button mat-menu-item (click)="logout()">Cerrar Sesión</button>
-    </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="appMenu">
-      <mat-icon>menu</mat-icon>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Transporte App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-  </mat-toolbar>
-  
-  <div class="content">
-    <h1>Bienvenido a la sección de inicio</h1>
-    <!-- Aquí puedes agregar más contenido -->
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-link nav-link" (click)="goUser()">Modificar Usuario</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-link nav-link" (click)="logout()">Cerrar Sesión</button>
+        </li>
+      </ul>
+    </div>
   </div>
-  
+</nav>
+
+<div class="container mt-4 content">
+  <h1 class="text-center">Bienvenido a la sección de inicio</h1>
+
+  <div class="row justify-content-center mt-4">
+    <!-- Botón para ir a la sección de Pagos -->
+    <div class="col-md-6 text-center mb-3">
+      <button class="btn btn-primary w-100" routerLink="/payments">
+        Gestionar Pagos
+      </button>
+    </div>
+
+    <!-- Botón para ir a la sección de Solicitudes de Viaje -->
+    <div class="col-md-6 text-center mb-3">
+      <button class="btn btn-primary w-100" routerLink="/travel-requests">
+        Gestionar Solicitudes de Viaje
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Gestión de Pagos</h2>
+
+  <div *ngFor="let payment of payments" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Pago ID: {{ payment.id_pago }}</h5>
+      <p class="card-text">Monto: {{ payment.monto }} - Método: {{ payment.metodo_pago }}</p>
+      <p class="card-text"><small class="text-muted">Fecha de Pago: {{ payment.fecha_pago }}</small></p>
+    </div>
+  </div>
+
+  <!-- Formulario para crear nuevos pagos -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Nuevo Pago</h5>
+      <form (ngSubmit)="createPayment(paymentForm.value)" #paymentForm="ngForm">
+        <div class="mb-3">
+          <label for="id_solicitud" class="form-label">ID Solicitud</label>
+          <input type="number" class="form-control" id="id_solicitud" name="id_solicitud" ngModel required>
+        </div>
+        <div class="mb-3">
+          <label for="monto" class="form-label">Monto</label>
+          <input type="number" class="form-control" id="monto" name="monto" ngModel required>
+        </div>
+        <div class="mb-3">
+          <label for="metodo_pago" class="form-label">Método de Pago</label>
+          <select class="form-select" id="metodo_pago" name="metodo_pago" ngModel required>
+            <option value="efectivo">Efectivo</option>
+            <option value="tarjeta">Tarjeta</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Pago</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botón para ir al Home -->
+  <div class="mt-4 text-center">
+    <button class="btn btn-success" (click)="goToHome()">Ir al Home</button>
+  </div>
+</div>

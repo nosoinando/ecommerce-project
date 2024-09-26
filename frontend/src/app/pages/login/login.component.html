@@ -1,32 +1,35 @@
-<div class="login-container">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Iniciar Sesión</mat-card-title>
-      </mat-card-header>
-  
-      <mat-card-content>
-        <form (ngSubmit)="login()">
-          <mat-form-field appearance="fill">
-            <mat-label>Correo Electrónico</mat-label>
-            <input matInput type="email" [(ngModel)]="email" name="email" required placeholder="Introduce tu correo">
-            <mat-error *ngIf="!email">Correo electrónico requerido</mat-error>
-          </mat-form-field>
-  
-          <mat-form-field appearance="fill">
-            <mat-label>Teléfono</mat-label>
-            <input matInput type="text" [(ngModel)]="telefono" name="telefono" required placeholder="Introduce tu teléfono">
-            <mat-error *ngIf="!telefono">Teléfono requerido</mat-error>
-          </mat-form-field>
-  
-          <div class="button-container">
-            <button mat-raised-button color="primary" type="submit">Iniciar Sesión</button>
-          </div>
-        </form>
-      </mat-card-content>
-  
-      <mat-card-actions>
-        <p>¿No tienes una cuenta? <a (click)="goToRegister()" style="cursor: pointer;">Regístrate aquí</a></p>
-      </mat-card-actions>
-    </mat-card>
+<div class="container login-container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <mat-card class="shadow">
+        <mat-card-header class="text-center">
+          <mat-card-title>Iniciar Sesión</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <form (ngSubmit)="login()">
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Correo Electrónico</mat-label>
+              <input matInput type="email" [(ngModel)]="email" name="email" required placeholder="Introduce tu correo">
+              <mat-error *ngIf="!email">Correo electrónico requerido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Teléfono</mat-label>
+              <input matInput type="text" [(ngModel)]="telefono" name="telefono" required placeholder="Introduce tu teléfono">
+              <mat-error *ngIf="!telefono">Teléfono requerido</mat-error>
+            </mat-form-field>
+
+            <div class="d-grid gap-2">
+              <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </div>
+          </form>
+        </mat-card-content>
+
+        <mat-card-actions class="text-center mt-3">
+          <p>¿No tienes una cuenta? <a (click)="goToRegister()" style="cursor: pointer;"> <u>Regístrate aquí</u> </a></p>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
-  
+</div>

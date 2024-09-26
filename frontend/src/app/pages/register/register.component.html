@@ -1,59 +1,62 @@
-<div class="register-container">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Registro de Usuario</mat-card-title>
-      </mat-card-header>
-  
-      <mat-card-content>
-        <form (ngSubmit)="register()">
-          <mat-form-field appearance="fill">
-            <mat-label>Nombre</mat-label>
-            <input matInput type="text" [(ngModel)]="user.nombre" name="nombre" required placeholder="Introduce tu nombre">
-            <mat-error *ngIf="!user.nombre">Nombre requerido</mat-error>
-          </mat-form-field>
-  
-          <mat-form-field appearance="fill">
-            <mat-label>Apellido</mat-label>
-            <input matInput type="text" [(ngModel)]="user.apellido" name="apellido" required placeholder="Introduce tu apellido">
-            <mat-error *ngIf="!user.apellido">Apellido requerido</mat-error>
-          </mat-form-field>
-  
-          <mat-form-field appearance="fill">
-            <mat-label>Correo Electrónico</mat-label>
-            <input matInput type="email" [(ngModel)]="user.email" name="email" required placeholder="Introduce tu correo">
-            <mat-error *ngIf="!user.email">Correo electrónico requerido</mat-error>
-          </mat-form-field>
-  
-          <mat-form-field appearance="fill">
-            <mat-label>Teléfono</mat-label>
-            <input matInput type="text" [(ngModel)]="user.telefono" name="telefono" required placeholder="Introduce tu teléfono">
-            <mat-error *ngIf="!user.telefono">Teléfono requerido</mat-error>
-          </mat-form-field>
-  
-          <mat-form-field appearance="fill">
-            <mat-label>Dirección</mat-label>
-            <input matInput type="text" [(ngModel)]="user.direccion" name="direccion" required placeholder="Introduce tu dirección">
-            <mat-error *ngIf="!user.direccion">Dirección requerida</mat-error>
-          </mat-form-field>
-  
-          <mat-form-field appearance="fill">
-            <mat-label>Tipo de Usuario</mat-label>
-            <mat-select [(ngModel)]="user.tipo_usuario" name="tipo_usuario" required>
-              <mat-option value="cliente">Cliente</mat-option>
-              <mat-option value="conductor">Conductor</mat-option>
-            </mat-select>
-            <mat-error *ngIf="!user.tipo_usuario">Tipo de usuario requerido</mat-error>
-          </mat-form-field>
-  
-          <div class="button-container">
-            <button mat-raised-button color="primary" type="submit">Registrarse</button>
-          </div>
-        </form>
-      </mat-card-content>
-  
-      <mat-card-actions>
-        <p>¿Ya tienes una cuenta? <a (click)="goToLogin()" style="cursor: pointer;">Inicia sesión aquí</a></p>
-      </mat-card-actions>
-    </mat-card>
+<div class="container register-container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <mat-card class="shadow">
+        <mat-card-header class="text-center">
+          <mat-card-title>Registro de Usuario</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <form (ngSubmit)="register()">
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Nombre</mat-label>
+              <input matInput type="text" [(ngModel)]="user.nombre" name="nombre" required placeholder="Introduce tu nombre">
+              <mat-error *ngIf="!user.nombre">Nombre requerido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Apellido</mat-label>
+              <input matInput type="text" [(ngModel)]="user.apellido" name="apellido" required placeholder="Introduce tu apellido">
+              <mat-error *ngIf="!user.apellido">Apellido requerido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Correo Electrónico</mat-label>
+              <input matInput type="email" [(ngModel)]="user.email" name="email" required placeholder="Introduce tu correo">
+              <mat-error *ngIf="!user.email">Correo electrónico requerido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Teléfono</mat-label>
+              <input matInput type="text" [(ngModel)]="user.telefono" name="telefono" required placeholder="Introduce tu teléfono">
+              <mat-error *ngIf="!user.telefono">Teléfono requerido</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Dirección</mat-label>
+              <input matInput type="text" [(ngModel)]="user.direccion" name="direccion" required placeholder="Introduce tu dirección">
+              <mat-error *ngIf="!user.direccion">Dirección requerida</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Tipo de Usuario</mat-label>
+              <mat-select [(ngModel)]="user.tipo_usuario" name="tipo_usuario" required>
+                <mat-option value="cliente">Cliente</mat-option>
+                <mat-option value="conductor">Conductor</mat-option>
+              </mat-select>
+              <mat-error *ngIf="!user.tipo_usuario">Tipo de usuario requerido</mat-error>
+            </mat-form-field>
+
+            <div class="d-grid gap-2">
+              <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Registrarse</button>
+            </div>
+          </form>
+        </mat-card-content>
+
+        <mat-card-actions class="text-center mt-3">
+          <p>¿Ya tienes una cuenta? <a (click)="goToLogin()" style="cursor: pointer;">Inicia sesión aquí</a></p>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
-  
+</div>
