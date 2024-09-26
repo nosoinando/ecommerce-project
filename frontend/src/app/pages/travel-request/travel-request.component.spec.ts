@@ -13,12 +13,10 @@ describe('TravelRequestComponent', () => {
   let notifierServiceMock: any;
 
   beforeEach(async () => {
-    // Mock de TravelRequestService
     travelRequestServiceMock = {
       createTravelRequest: jasmine.createSpy('createTravelRequest').and.returnValue(of({}))
     };
 
-    // Mock de NotifierService
     notifierServiceMock = {
       showNotification: jasmine.createSpy('showNotification')
     };
@@ -45,15 +43,15 @@ describe('TravelRequestComponent', () => {
 
   it('should call saveTravelRequest and show success notification', () => {
     const mockTravelRequest = { origen_latitud: 4.6, origen_longitud: -74.1, destino_latitud: 4.7, destino_longitud: -74.2 };
-    component.saveTravelRequest();  // Cambiado a saveTravelRequest
+    component.saveTravelRequest();  
     
-    expect(travelRequestServiceMock.createTravelRequest).toHaveBeenCalledWith(mockTravelRequest);  // Simula el envío
+    expect(travelRequestServiceMock.createTravelRequest).toHaveBeenCalledWith(mockTravelRequest); 
     expect(notifierServiceMock.showNotification).toHaveBeenCalledWith('Solicitud de viaje creada correctamente', 'Cerrar');
   });
 
   it('should show error notification if creating travel request fails', () => {
-    travelRequestServiceMock.createTravelRequest.and.returnValue(of({ error: true }));  // Simula un fallo
-    component.saveTravelRequest();  // Cambiado a saveTravelRequest
+    travelRequestServiceMock.createTravelRequest.and.returnValue(of({ error: true })); 
+    component.saveTravelRequest();  
 
     expect(notifierServiceMock.showNotification).toHaveBeenCalledWith('Error al crear la solicitud de viaje', 'Cerrar');
   });

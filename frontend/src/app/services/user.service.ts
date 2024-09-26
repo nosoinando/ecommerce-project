@@ -19,15 +19,15 @@ export class UserService {
     return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
       tap(response => {
         if (response.user) {
-          this.currentUserId = response.user.id_usuario;  // Almacena el ID del usuario logueado
-          localStorage.setItem('currentUserId', this.currentUserId.toString());  // Almacena en localStorage
+          this.currentUserId = response.user.id_usuario; 
+          localStorage.setItem('currentUserId', this.currentUserId.toString()); 
         }
       })
     );
   }
 
   getCurrentUserId(): number | null {
-    return this.currentUserId || parseInt(localStorage.getItem('currentUserId') || '0', 10);  // Recupera desde localStorage si no está en memoria
+    return this.currentUserId || parseInt(localStorage.getItem('currentUserId') || '0', 10);  
   }
 
   update(id: number, user: any): Observable<any> {

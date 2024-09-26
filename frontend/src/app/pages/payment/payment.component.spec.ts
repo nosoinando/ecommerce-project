@@ -13,20 +13,18 @@ describe('PaymentComponent', () => {
   let notifierServiceMock: any;
 
   beforeEach(async () => {
-    // Mock de PaymentService
     paymentServiceMock = {
       getPaymentsByUser: jasmine.createSpy('getPaymentsByUser').and.returnValue(of([{ id_pago: 1, monto: 100, metodo_pago: 'efectivo', fecha_pago: '2024-01-01' }])),
       createPayment: jasmine.createSpy('createPayment').and.returnValue(of({}))
     };
 
-    // Mock de NotifierService
     notifierServiceMock = {
       showNotification: jasmine.createSpy('showNotification')
     };
 
     await TestBed.configureTestingModule({
       declarations: [PaymentComponent],
-      imports: [FormsModule, MatSnackBarModule],  // Importar los módulos necesarios
+      imports: [FormsModule, MatSnackBarModule], 
       providers: [
         { provide: PaymentService, useValue: paymentServiceMock },
         { provide: NotifierService, useValue: notifierServiceMock }
@@ -59,7 +57,7 @@ describe('PaymentComponent', () => {
   });
 
   it('should show error notification if creating payment fails', () => {
-    paymentServiceMock.createPayment.and.returnValue(of({ error: true }));  // Simular fallo
+    paymentServiceMock.createPayment.and.returnValue(of({ error: true }));
     const mockPayment = { id_solicitud: 1, monto: 100, metodo_pago: 'efectivo' };
     component.createPayment(mockPayment);
 

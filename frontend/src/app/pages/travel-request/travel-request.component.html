@@ -1,10 +1,8 @@
 <div class="container mt-4">
   <h2>Solicitud de Viaje</h2>
 
-  <!-- Mapa de Leaflet -->
   <div id="map" style="height: 400px;"></div>
 
-  <!-- Datos del viaje y botón para guardar la solicitud -->
   <div class="mt-4">
     <h4>Datos del Viaje</h4>
     <div *ngIf="originLat && originLng">Origen: {{ originLat }}, {{ originLng }}</div>
@@ -13,13 +11,11 @@
     <button class="btn btn-primary mt-3" (click)="saveTravelRequest()">Guardar Solicitud de Viaje</button>
   </div>
 
-  <!-- Información de la solicitud después de guardarla -->
   <div class="mt-4" *ngIf="requestId && requestStatus">
     <h4>Información de la Solicitud Guardada</h4>
     <div>ID de la Solicitud: {{ requestId }}</div>
     <div>Estado: {{ requestStatus }}</div>
 
-    <!-- Botón para redirigir al home -->
     <button class="btn btn-success mt-3" (click)="goToHome()">Ir al Home</button>
   </div>
 </div>
