@@ -14,6 +14,8 @@ import { PaymentComponent } from './pages/payment/payment.component';
 import { TravelRequestComponent } from './pages/travel-request/travel-request.component'; 
 
 import { MaterialModule } from './material.module';
+import { DriverComponent } from './pages/drivers/driver.component';
+import { VehicleComponent } from './pages/vehicles/vehicle.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MaterialModule } from './material.module';
     HomeComponent,
     UserComponent,
     PaymentComponent, 
-    TravelRequestComponent 
+    TravelRequestComponent,
+    DriverComponent,
+    VehicleComponent
   ],
   imports: [
     BrowserModule,

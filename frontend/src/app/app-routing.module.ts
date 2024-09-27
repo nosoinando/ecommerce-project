@@ -5,7 +5,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { PaymentComponent } from './pages/payment/payment.component';  
-import { TravelRequestComponent } from './pages/travel-request/travel-request.component';  
+import { TravelRequestComponent } from './pages/travel-request/travel-request.component';
+import { DriverComponent } from './pages/drivers/driver.component'; // Asegúrate de importar el componente DriverComponent
+import { VehicleComponent } from './pages/vehicles/vehicle.component'; // Importa el componente VehicleComponent
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'payments', component: PaymentComponent },  
   { path: 'travel-requests', component: TravelRequestComponent },  
+  { path: 'drivers', component: DriverComponent }, // Agrega la ruta para el componente de conductores
+  { path: 'vehicles', component: VehicleComponent }, // Agrega la ruta para el componente de vehículos
   { path: '', redirectTo: '/login', pathMatch: 'full' }, 
 ];
 

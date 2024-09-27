@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div *ngIf="loading" class="text-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+
+    <div *ngIf="!loading">
+        <h2 class="text-center mb-4">Modificar Conductor</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <form (ngSubmit)="updateDriver()">
+                            <div class="mb-3">
+                              <label for="id_conductor" class="form-label">Selecciona un Conductor</label>
+                              <select id="id_conductor" class="form-select" [(ngModel)]="driver.id_conductor" name="id_conductor" required>
+                                <option *ngFor="let driver of drivers" [value]="driver.id_conductor">{{ driver.id_conductor }}</option>
+                              </select>
+                            </div>
+                          
+                            <div class="mb-3">
+                              <label for="licencia" class="form-label">Número de Licencia</label>
+                              <input type="text" id="licencia" class="form-control" [(ngModel)]="driver.licencia" name="licencia" required placeholder="Introduce el número de licencia">
+                            </div>
+                          
+                            <div class="mb-3">
+                              <label for="estado" class="form-label">Estado</label>
+                              <select id="estado" class="form-select" [(ngModel)]="driver.estado" name="estado" required>
+                                <option value="disponible">Disponible</option>
+                                <option value="no disponible">No Disponible</option>
+                              </select>
+                            </div>
+                          
+                            <button type="submit" class="btn btn-primary">Actualizar Conductor</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

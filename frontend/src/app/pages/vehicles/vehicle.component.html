@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Crear Vehículo</h2>
+
+  <!-- Mensajes de éxito y error -->
+  <div *ngIf="successMessage" class="alert alert-success" role="alert">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <form (ngSubmit)="createVehicle()">
+    <div class="mb-3">
+      <label for="id_conductor" class="form-label">ID del Conductor</label>
+      <input type="number" id="id_conductor" class="form-control" [(ngModel)]="vehicle.id_conductor" name="id_conductor" required placeholder="Introduce el ID del conductor">
+    </div>
+
+    <div class="mb-3">
+      <label for="marca" class="form-label">Marca</label>
+      <input type="text" id="marca" class="form-control" [(ngModel)]="vehicle.marca" name="marca" required placeholder="Introduce la marca">
+    </div>
+
+    <div class="mb-3">
+      <label for="modelo" class="form-label">Modelo</label>
+      <input type="text" id="modelo" class="form-control" [(ngModel)]="vehicle.modelo" name="modelo" required placeholder="Introduce el modelo">
+    </div>
+
+    <div class="mb-3">
+      <label for="placa" class="form-label">Placa</label>
+      <input type="text" id="placa" class="form-control" [(ngModel)]="vehicle.placa" name="placa" required placeholder="Introduce la placa">
+    </div>
+
+    <div class="mb-3">
+      <label for="tipo_vehiculo" class="form-label">Tipo de Vehículo</label>
+      <select id="tipo_vehiculo" class="form-control" [(ngModel)]="vehicle.tipo_vehiculo" name="tipo_vehiculo" required>
+        <option value="auto">Auto</option>
+        <option value="moto">Moto</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear Vehículo</button>
+  </form>
+
+  <!-- Botón para regresar al inicio -->
+  <div class="mt-4 text-center">
+    <button class="btn btn-secondary" (click)="goHome()">Regresar al Inicio</button>
+  </div>
+</div>
